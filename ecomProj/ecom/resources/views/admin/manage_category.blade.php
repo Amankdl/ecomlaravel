@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('page_title','Manage Category');
+@section('category_active_class','active')
 @section('container')
-
 <div class="row">
     <div class="col-lg-12">
     <a class="btn btn-success my-3" href="{{url('admin/category')}}">Back</a>

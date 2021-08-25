@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('page_title','Category');
-@section('container')
 @section('category_active_class','active')
+@section('container')
 <div class="row">
     <h1>Categories</h1>
     <div class="col-md-12 mt-5">

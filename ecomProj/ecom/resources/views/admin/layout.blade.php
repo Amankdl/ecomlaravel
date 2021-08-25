@@ -69,6 +69,14 @@
                             <a href="{{url('admin/coupon')}}">
                                 <i class="fas fa-tachometer-alt"></i>Coupon</a>                            
                         </li>  
+                        <li class="@yield('size_active_class')">
+                            <a href="{{url('admin/size')}}">
+                            <i class="far fa-window-maximize"></i>Size</a>                            
+                        </li>   
+                        <li class="@yield('color_active_class')">
+                            <a href="{{url('admin/color')}}">
+                            <i class="fas fa-paint-brush"></i>Color</a>                            
+                        </li> 
                     </ul>
                 </div>
             </nav>
@@ -91,12 +99,24 @@
                         </li> 
                         <li class="@yield('category_active_class')">
                             <a href="{{url('admin/category')}}">
-                                <i class="fas fa-tachometer-alt"></i>Categories</a>                            
+                                <i class="fas fa-list-alt"></i>Categories</a>                            
                         </li>
                         <li class="@yield('coupon_active_class')">
                             <a href="{{url('admin/coupon')}}">
-                                <i class="fas fa-tachometer-alt"></i>Coupon</a>                            
-                        </li>                        
+                                <i class="fas fa-tags"></i>Coupon</a>                            
+                        </li> 
+                        <li class="@yield('size_active_class')">
+                            <a href="{{url('admin/size')}}">
+                            <i class="far fa-window-maximize"></i>Size</a>                            
+                        </li>   
+                        <li class="@yield('color_active_class')">
+                            <a href="{{url('admin/color')}}">
+                            <i class="fas fa-paint-brush"></i>Color</a>                            
+                        </li>  
+                        <li class="@yield('product_active_class')">
+                            <a href="{{url('admin/product')}}">
+                            <i class="fas fa-shopping-cart"></i>Product</a>                            
+                        </li>                    
                     </ul>
                 </nav>
             </div>
@@ -177,8 +197,7 @@
     <!-- </script> -->
 
     <!-- Main JS-->
-    <script src="{{asset('admin_assets/js/main.js')}}"></script>
-
+    <script src="{{asset('admin_assets/js/main.js')}}"></script>    
 </body>
 
 </html>

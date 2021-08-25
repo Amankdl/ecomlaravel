@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('page_title','Coupon');
-@section('container')
 @section('coupon_active_class','active')
+@section('container')
 <div class="row">
     <h1>Coupons</h1>
     <div class="col-md-12 mt-5">
@@ -32,9 +32,15 @@
                         <td>{{$coupon -> code}}</td>
                         <td>{{$coupon -> value}}</td>
                         <td><a href="{{url('admin/coupon/manage_coupon')}}/{{$coupon -> id}}" class="btn btn-primary">Edit</a>&nbsp;
-                            <a href="coupon/delete/{{$coupon -> id}}" class="btn btn-danger">Delete</a></td>
-                    </tr>  
-                    @endforeach                  
+                            @if($coupon -> status == 1)
+                            <a href="{{url('admin/coupon/status/deactive')}}/{{$coupon -> id}}" class="btn btn-warning">Deactive</a>&nbsp;
+                            @else
+                            <a href="{{url('admin/coupon/status/active')}}/{{$coupon -> id}}" class="btn btn-success">Active</a>&nbsp;
+                            @endif
+                            <a href="coupon/delete/{{$coupon -> id}}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

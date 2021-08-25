@@ -39,6 +39,7 @@ class CouponController extends Controller
             $request -> session() -> flash('msg','Coupon updated sucessfully.');
         }else{ //add mode
             $res = new Coupon;
+            $res -> status = 1;
             $request -> session() -> flash('msg','Coupon added sucessfully.');
         }
         
@@ -54,6 +55,14 @@ class CouponController extends Controller
         $id = $request -> id;
         Coupon::destroy([$id]);
         $request -> session() -> flash('msg','Coupon deleted sucessfully.');
+        return redirect('admin/coupon');
+    }
+
+    public function update_status(Request $request, $status, $id){        
+        $res = Coupon::find($id);
+        $res -> status = $status ==  "active" ? 1 : 0 ;
+        $res -> save();
+        $request -> session() -> flash('msg','Status updated sucessfully.');
         return redirect('admin/coupon');
     }
 }
